@@ -3,7 +3,7 @@ config.go
 drinks.go
 ingredients.go
 orders.go
-testgo.go
+test.go
 go.mod
 go.sum
 pkg/models/sdkerrors/sdkerror.go
@@ -72,7 +72,7 @@ docs/models/callbacks/createorderorderupdateresponse.md
 docs/models/callbacks/createorderorderupdaterequestbody.md
 docs/models/webhooks/stockupdateresponse.md
 docs/models/webhooks/stockupdaterequestbody.md
-docs/sdks/testgo/README.md
+docs/sdks/test/README.md
 docs/sdks/authentication/README.md
 docs/sdks/config/README.md
 docs/sdks/drinks/README.md

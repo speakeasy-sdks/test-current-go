@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: abbc3a8faac54f76013e5d509a8d11ec
+  docChecksum: 8db86c8597b22945c2b3f77241037075
   docVersion: 1.0.0
   speakeasyVersion: 1.110.0
   generationVersion: 2.175.0
@@ -23,10 +23,11 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 go:
-  version: 0.1.0
+  version: 0.2.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/test-current-go
   maxMethodParams: 0
   packageName: github.com/speakeasy-sdks/test-current-go
   published: true
+  repoSubDirectory: .

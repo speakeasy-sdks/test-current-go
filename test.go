@@ -78,11 +78,11 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 	return ServerList[c.Server], c.ServerDefaults[c.Server]
 }
 
-// TestGo - The Speakeasy Bar: A bar that serves drinks.
+// Test - The Speakeasy Bar: A bar that serves drinks.
 // A secret underground bar that serves drinks to those in the know.
 //
 // https://docs.speakeasy.bar - The Speakeasy Bar Documentation.
-type TestGo struct {
+type Test struct {
 	// The authentication endpoints.
 	Authentication *Authentication
 	Config         *Config
@@ -96,18 +96,18 @@ type TestGo struct {
 	sdkConfiguration sdkConfiguration
 }
 
-type SDKOption func(*TestGo)
+type SDKOption func(*Test)
 
 // WithServerURL allows the overriding of the default server URL
 func WithServerURL(serverURL string) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
 }
 
 // WithTemplatedServerURL allows the overriding of the default server URL with a templated URL populated with the provided parameters
 func WithTemplatedServerURL(serverURL string, params map[string]string) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		if params != nil {
 			serverURL = utils.ReplaceParameters(serverURL, params)
 		}
@@ -118,7 +118,7 @@ func WithTemplatedServerURL(serverURL string, params map[string]string) SDKOptio
 
 // WithServer allows the overriding of the default server by name
 func WithServer(server string) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		_, ok := ServerList[server]
 		if !ok {
 			panic(fmt.Errorf("server %s not found", server))
@@ -161,7 +161,7 @@ func (e *ServerEnvironment) UnmarshalJSON(data []byte) error {
 
 // WithEnvironment allows setting the environment variable for url substitution
 func WithEnvironment(environment ServerEnvironment) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		for server := range sdk.sdkConfiguration.ServerDefaults {
 			if _, ok := sdk.sdkConfiguration.ServerDefaults[server]["environment"]; !ok {
 				continue
@@ -174,7 +174,7 @@ func WithEnvironment(environment ServerEnvironment) SDKOption {
 
 // WithOrganization allows setting the organization variable for url substitution
 func WithOrganization(organization string) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		for server := range sdk.sdkConfiguration.ServerDefaults {
 			if _, ok := sdk.sdkConfiguration.ServerDefaults[server]["organization"]; !ok {
 				continue
@@ -187,7 +187,7 @@ func WithOrganization(organization string) SDKOption {
 
 // WithClient allows the overriding of the default HTTP client used by the SDK
 func WithClient(client HTTPClient) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		sdk.sdkConfiguration.DefaultClient = client
 	}
 }
@@ -201,27 +201,27 @@ func withSecurity(security interface{}) func(context.Context) (interface{}, erro
 // WithSecurity configures the SDK to use the provided security details
 
 func WithSecurity(apiKey string) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		security := shared.Security{APIKey: apiKey}
 		sdk.sdkConfiguration.Security = withSecurity(&security)
 	}
 }
 
 func WithRetryConfig(retryConfig utils.RetryConfig) SDKOption {
-	return func(sdk *TestGo) {
+	return func(sdk *Test) {
 		sdk.sdkConfiguration.RetryConfig = &retryConfig
 	}
 }
 
 // New creates a new instance of the SDK with the provided options
-func New(opts ...SDKOption) *TestGo {
-	sdk := &TestGo{
+func New(opts ...SDKOption) *Test {
+	sdk := &Test{
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.1.0",
+			SDKVersion:        "0.2.0",
 			GenVersion:        "2.175.0",
-			UserAgent:         "speakeasy-sdk/go 0.1.0 2.175.0 1.0.0 github.com/speakeasy-sdks/test-current-go",
+			UserAgent:         "speakeasy-sdk/go 0.2.0 2.175.0 1.0.0 github.com/speakeasy-sdks/test-current-go",
 			ServerDefaults: map[string]map[string]string{
 				"prod":    {},
 				"staging": {},

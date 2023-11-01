@@ -1,4 +1,4 @@
-# TestGo SDK
+# Test SDK
 
 
 ## Overview

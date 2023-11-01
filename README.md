@@ -15,7 +15,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 go get github.com/speakeasy-sdks/test-current-go
@@ -24,8 +24,6 @@ go get github.com/speakeasy-sdks/test-current-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
@@ -57,34 +55,32 @@ func main() {
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [.Authentication](docs/sdks/authentication/README.md)
+### [.Authentication](docs/sdks/authentication/README.md)
 
 * [Authenticate](docs/sdks/authentication/README.md#authenticate) - Authenticate with the API by providing a username and password.
 
-## [.Config](docs/sdks/config/README.md)
+### [.Config](docs/sdks/config/README.md)
 
 * [SubscribeToWebhooks](docs/sdks/config/README.md#subscribetowebhooks) - Subscribe to webhooks.
 
-## [.Drinks](docs/sdks/drinks/README.md)
+### [.Drinks](docs/sdks/drinks/README.md)
 
 * [GetDrink](docs/sdks/drinks/README.md#getdrink) - Get a drink.
 * [ListDrinks](docs/sdks/drinks/README.md#listdrinks) - Get a list of drinks.
 
-## [.Ingredients](docs/sdks/ingredients/README.md)
+### [.Ingredients](docs/sdks/ingredients/README.md)
 
 * [ListIngredients](docs/sdks/ingredients/README.md#listingredients) - Get a list of ingredients.
 
-## [.Orders](docs/sdks/orders/README.md)
+### [.Orders](docs/sdks/orders/README.md)
 
 * [CreateOrder](docs/sdks/orders/README.md#createorder) - Create an order.
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
