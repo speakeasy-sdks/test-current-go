@@ -85,13 +85,13 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 type Test struct {
 	// The authentication endpoints.
 	Authentication *Authentication
-	Config         *Config
 	// The drinks endpoints.
 	Drinks *Drinks
 	// The ingredients endpoints.
 	Ingredients *Ingredients
 	// The orders endpoints.
 	Orders *Orders
+	Config *Config
 
 	sdkConfiguration sdkConfiguration
 }
@@ -219,9 +219,9 @@ func New(opts ...SDKOption) *Test {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.2.0",
-			GenVersion:        "2.175.0",
-			UserAgent:         "speakeasy-sdk/go 0.2.0 2.175.0 1.0.0 github.com/speakeasy-sdks/test-current-go",
+			SDKVersion:        "0.3.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.3.0 2.181.1 1.0.0 github.com/speakeasy-sdks/test-current-go",
 			ServerDefaults: map[string]map[string]string{
 				"prod":    {},
 				"staging": {},
@@ -250,13 +250,13 @@ func New(opts ...SDKOption) *Test {
 
 	sdk.Authentication = newAuthentication(sdk.sdkConfiguration)
 
-	sdk.Config = newConfig(sdk.sdkConfiguration)
-
 	sdk.Drinks = newDrinks(sdk.sdkConfiguration)
 
 	sdk.Ingredients = newIngredients(sdk.sdkConfiguration)
 
 	sdk.Orders = newOrders(sdk.sdkConfiguration)
+
+	sdk.Config = newConfig(sdk.sdkConfiguration)
 
 	return sdk
 }

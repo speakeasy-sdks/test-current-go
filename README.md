@@ -62,10 +62,6 @@ func main() {
 
 * [Authenticate](docs/sdks/authentication/README.md#authenticate) - Authenticate with the API by providing a username and password.
 
-### [.Config](docs/sdks/config/README.md)
-
-* [SubscribeToWebhooks](docs/sdks/config/README.md#subscribetowebhooks) - Subscribe to webhooks.
-
 ### [.Drinks](docs/sdks/drinks/README.md)
 
 * [GetDrink](docs/sdks/drinks/README.md#getdrink) - Get a drink.
@@ -78,6 +74,10 @@ func main() {
 ### [.Orders](docs/sdks/orders/README.md)
 
 * [CreateOrder](docs/sdks/orders/README.md#createorder) - Create an order.
+
+### [.Config](docs/sdks/config/README.md)
+
+* [SubscribeToWebhooks](docs/sdks/config/README.md#subscribetowebhooks) - Subscribe to webhooks.
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
@@ -112,7 +112,7 @@ func main() {
 	res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{})
 	if err != nil {
 
-		var e *APIError
+		var e *sdkerrors.APIError
 		if errors.As(err, &e) {
 			// handle error
 			log.Fatal(e.Error())
@@ -139,12 +139,11 @@ You can override the default server globally using the `WithServer` option when 
 
 
 Some of the server options above contain variables. If you want to set the values of those variables, the following options are provided for doing so:
- * `WithEnvironment ServerEnvironment`
+ * `WithEnvironment testcurrentgo.ServerEnvironment`
 
  * `WithOrganization string`
 
 For example:
-
 
 ```go
 package main
@@ -159,8 +158,8 @@ import (
 
 func main() {
 	s := testcurrentgo.New(
-		testcurrentgo.WithSecurity(""),
 		testcurrentgo.WithServer("customer"),
+		testcurrentgo.WithSecurity(""),
 	)
 
 	ctx := context.Background()
@@ -181,7 +180,6 @@ func main() {
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
 
-
 ```go
 package main
 
@@ -195,8 +193,8 @@ import (
 
 func main() {
 	s := testcurrentgo.New(
-		testcurrentgo.WithSecurity(""),
 		testcurrentgo.WithServerURL("https://speakeasy.bar"),
+		testcurrentgo.WithSecurity(""),
 	)
 
 	ctx := context.Background()
@@ -245,6 +243,52 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 <!-- Start Go Types -->
 
 <!-- End Go Types -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name     | Type     | Scheme   |
+| -------- | -------- | -------- |
+| `APIKey` | apiKey   | API key  |
+
+You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
+
+```go
+package main
+
+import (
+	"context"
+	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
+	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := testcurrentgo.New(
+		testcurrentgo.WithSecurity(""),
+	)
+
+	ctx := context.Background()
+	res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Object != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
