@@ -24,6 +24,8 @@ go get github.com/speakeasy-sdks/test-current-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```go
 package main
 
@@ -85,7 +87,7 @@ func main() {
 <!-- End Dev Containers -->
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
 
@@ -94,8 +96,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | sdkerrors.APIError | 5XX                | application/json   |
 | sdkerrors.SDKError | 400-600            | */*                |
 
-
-## Example
+### Example
 
 ```go
 package main
@@ -135,9 +136,9 @@ func main() {
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Name
+### Select Server by Name
 
 You can override the default server globally using the `WithServer` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
 
@@ -146,14 +147,7 @@ You can override the default server globally using the `WithServer` option when 
 | `prod` | `https://speakeasy.bar` | None |
 | `staging` | `https://staging.speakeasy.bar` | None |
 | `customer` | `https://{organization}.{environment}.speakeasy.bar` | `environment` (default is `prod`), `organization` (default is `api`) |
-
-
-Some of the server options above contain variables. If you want to set the values of those variables, the following options are provided for doing so:
- * `WithEnvironment testcurrentgo.ServerEnvironment`
-
- * `WithOrganization string`
-
-For example:
+#### Example
 
 ```go
 package main
@@ -185,11 +179,15 @@ func main() {
 
 ```
 
+#### Variables
 
-## Override Server URL Per-Client
+Some of the server options above contain variables. If you want to set the values of those variables, the following options are provided for doing so:
+ * `WithEnvironment testcurrentgo.ServerEnvironment`
+ * `WithOrganization string`
+
+### Override Server URL Per-Client
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
-
 ```go
 package main
 
@@ -222,7 +220,7 @@ func main() {
 <!-- End Server Selection -->
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Go SDK makes API calls that wrap an internal HTTP client. The requirements for the HTTP client are very simple. It must match this interface:
 
@@ -257,9 +255,9 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 
 
 <!-- Start Authentication -->
-# Authentication
+## Authentication
 
-## Per-Client Security Schemes
+### Per-Client Security Schemes
 
 This SDK supports the following security scheme globally:
 
@@ -268,7 +266,6 @@ This SDK supports the following security scheme globally:
 | `APIKey` | apiKey   | API key  |
 
 You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
-
 ```go
 package main
 
