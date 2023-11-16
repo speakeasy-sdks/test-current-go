@@ -15,11 +15,12 @@ Subscribe to webhooks.
 package main
 
 import(
-	"context"
-	"log"
-	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
+	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
+	"context"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {

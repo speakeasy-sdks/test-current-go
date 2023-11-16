@@ -103,8 +103,10 @@ package main
 
 import (
 	"context"
+	"errors"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/test-current-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
@@ -273,7 +275,6 @@ import (
 	"context"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 

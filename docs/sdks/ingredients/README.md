@@ -19,11 +19,11 @@ Get a list of ingredients, if authenticated this will include stock levels and p
 package main
 
 import(
-	"context"
-	"log"
-	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
+	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
+	"context"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"log"
 )
 
 func main() {

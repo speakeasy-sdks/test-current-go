@@ -20,11 +20,11 @@ Get a drink by name, if authenticated this will include stock levels and product
 package main
 
 import(
-	"context"
-	"log"
-	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
+	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
+	"context"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -72,11 +72,11 @@ Get a list of drinks, if authenticated this will include stock levels and produc
 package main
 
 import(
-	"context"
-	"log"
-	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
+	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
+	"context"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
