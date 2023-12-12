@@ -29,7 +29,7 @@ import(
 
 func main() {
     s := testcurrentgo.New(
-        testcurrentgo.WithSecurity(""),
+        testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
     ctx := context.Background()
@@ -72,7 +72,6 @@ Get a list of drinks, if authenticated this will include stock levels and produc
 package main
 
 import(
-	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"context"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
@@ -80,9 +79,7 @@ import(
 )
 
 func main() {
-    s := testcurrentgo.New(
-        testcurrentgo.WithSecurity(""),
-    )
+    s := testcurrentgo.New()
 
     ctx := context.Background()
     res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{})

@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```go
 package main
 
@@ -6,14 +6,11 @@ import (
 	"context"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := testcurrentgo.New(
-		testcurrentgo.WithSecurity(""),
-	)
+	s := testcurrentgo.New()
 
 	ctx := context.Background()
 	res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{})
@@ -27,4 +24,4 @@ func main() {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

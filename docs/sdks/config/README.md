@@ -25,7 +25,7 @@ import(
 
 func main() {
     s := testcurrentgo.New(
-        testcurrentgo.WithSecurity(""),
+        testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
     ctx := context.Background()
