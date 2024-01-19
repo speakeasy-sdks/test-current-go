@@ -218,9 +218,9 @@ func New(opts ...SDKOption) *Test {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.6.1",
-			GenVersion:        "2.234.3",
-			UserAgent:         "speakeasy-sdk/go 0.6.1 2.234.3 1.0.0 github.com/speakeasy-sdks/test-current-go",
+			SDKVersion:        "0.6.2",
+			GenVersion:        "2.237.2",
+			UserAgent:         "speakeasy-sdk/go 0.6.2 2.237.2 1.0.0 github.com/speakeasy-sdks/test-current-go",
 			ServerDefaults: map[string]map[string]string{
 				"prod":    {},
 				"staging": {},
