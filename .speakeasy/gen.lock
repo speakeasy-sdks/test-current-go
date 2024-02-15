@@ -4,16 +4,16 @@ management:
   docChecksum: 8db86c8597b22945c2b3f77241037075
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.253.0
-  releaseVersion: 0.7.1
-  configChecksum: 0b5edb48da23b11b4f113dcd6f7ed2fe
+  generationVersion: 2.258.2
+  releaseVersion: 0.8.0
+  configChecksum: d06a03511932ad6bcd460c4785ea2497
   repoURL: https://github.com/speakeasy-sdks/test-current-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-current-go
   published: true
 features:
   go:
-    core: 3.3.2
+    core: 3.4.0
     errors: 2.81.8
     examples: 2.81.3
     globalSecurity: 2.82.6
@@ -105,3 +105,4 @@ generatedFiles:
   - docs/sdks/config/README.md
   - USAGE.md
   - .gitattributes
+  - internal/hooks/hooks.go
