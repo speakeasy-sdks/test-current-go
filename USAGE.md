@@ -6,11 +6,14 @@ import (
 	"context"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := testcurrentgo.New()
+	s := testcurrentgo.New(
+		testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
+	)
 
 	ctx := context.Background()
 	res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{})

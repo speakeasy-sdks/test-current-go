@@ -34,11 +34,14 @@ import (
 	"context"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := testcurrentgo.New()
+	s := testcurrentgo.New(
+		testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
+	)
 
 	ctx := context.Background()
 	res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{})
@@ -100,14 +103,11 @@ import (
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := testcurrentgo.New(
-		testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
-	)
+	s := testcurrentgo.New()
 
 	ctx := context.Background()
 	res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{})
@@ -152,14 +152,12 @@ import (
 	"context"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := testcurrentgo.New(
 		testcurrentgo.WithServer("customer"),
-		testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -191,14 +189,12 @@ import (
 	"context"
 	testcurrentgo "github.com/speakeasy-sdks/test-current-go"
 	"github.com/speakeasy-sdks/test-current-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-current-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := testcurrentgo.New(
 		testcurrentgo.WithServerURL("https://speakeasy.bar"),
-		testcurrentgo.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
 	ctx := context.Background()
