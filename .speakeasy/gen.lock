@@ -4,15 +4,16 @@ management:
   docChecksum: 8db86c8597b22945c2b3f77241037075
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.7
-  releaseVersion: 0.9.1
-  configChecksum: 45b64f8e732eb5c28a2eae570ffff9ba
+  generationVersion: 2.275.4
+  releaseVersion: 0.10.0
+  configChecksum: 10e7656cdcbc636671fdfbbc06c2982e
   repoURL: https://github.com/speakeasy-sdks/test-current-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-current-go
   published: true
 features:
   go:
+    callbacks: 1.0.0
     core: 3.4.3
     errors: 2.81.8
     examples: 2.81.3
@@ -20,6 +21,7 @@ features:
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
     serverIDs: 2.81.1
+    webhooks: 1.0.0
 generatedFiles:
   - authentication.go
   - drinks.go
