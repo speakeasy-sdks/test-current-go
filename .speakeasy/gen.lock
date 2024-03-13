@@ -3,10 +3,10 @@ id: 1d88ad87-7026-404e-b63a-846ae480ed9e
 management:
   docChecksum: 8db86c8597b22945c2b3f77241037075
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 0.11.0
-  configChecksum: ff3a85b5c04eec206880503c14b84f0c
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 0.11.1
+  configChecksum: de382b838cbc4d149698a1d2ef8e5c2b
   repoURL: https://github.com/speakeasy-sdks/test-current-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-current-go
@@ -18,7 +18,7 @@ features:
     errors: 2.81.8
     examples: 2.81.3
     globalSecurity: 2.82.8
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     inputOutputModels: 2.83.0
     responseFormat: 0.1.0
     serverIDs: 2.81.1
